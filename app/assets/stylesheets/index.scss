@@ -1,0 +1,27 @@
+.index-jumbotron {
+  height: 500px;
+  text-align: center;
+
+  .jumbotron-content {
+    z-index: 1;
+    position: relative;
+  }
+
+  .video-container {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    video {
+      width: 150%;
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

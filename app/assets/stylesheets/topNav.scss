@@ -1,0 +1,56 @@
+#topNav {
+  &.top-nav-index {
+    position: absolute;
+    width: 100%;
+  }
+
+  .navbar-left {
+    float: left;
+  }
+
+  .navbar-right {
+    float: right;
+  }
+
+  .navbar-brand {
+    height: 40px;
+    padding: 20px 0;
+
+    img {
+      height: 40px;
+    }
+  }
+
+  .navbar-nav {
+
+    ul {
+
+      padding: 0;
+
+      li {
+
+        display: inline-block;
+
+        a {
+
+          text-transform: uppercase;
+          display: block;
+          padding: 2.3rem .5rem;
+          font-size: 14px;
+          text-decoration: none;
+          font-weight: 500;
+          color: $gray;
+
+          &:hover {
+            color: $gray-light;
+          }
+
+          &.active {
+
+          }
+        }
+
+      }
+    }
+  }
+}
