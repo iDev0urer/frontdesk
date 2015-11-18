@@ -23,7 +23,15 @@ gem 'react-rails', '~> 1.3.1'
 gem 'opal-rails', '~> 0.8.0'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry-rails'
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  gem 'guard-rspec'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl'
+  gem 'shoulda-matchers'
 end
 
 group :development do

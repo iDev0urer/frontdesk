@@ -15,10 +15,9 @@ ActiveRecord::Schema.define(version: 20151116221233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
   enable_extension "uuid-ossp"
 
-  create_table "events", force: :cascade do |t|
+  create_table "events", id: :uuid, default: "uuid_generate_v1()", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,19 +31,22 @@ ActiveRecord::Schema.define(version: 20151116221233) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "organizations", force: :cascade do |t|
+  create_table "organizations", id: :uuid, default: "uuid_generate_v1()", force: :cascade do |t|
     t.string   "name"
-    t.hstore   "domains"
+    t.json     "domains"
     t.text     "details"
     t.text     "notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.uuid     "tenant_id",  default: "uuid_generate_v1()"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
+
+  add_index "organizations", ["tenant_id"], name: "index_organizations_on_tenant_id", using: :btree
 
   create_table "plans", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
-    t.hstore   "features"
+    t.json     "features"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,11 +59,11 @@ ActiveRecord::Schema.define(version: 20151116221233) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "tenants", force: :cascade do |t|
+  create_table "tenants", id: :uuid, default: "uuid_generate_v1()", force: :cascade do |t|
     t.string   "name"
-    t.string   "subdomain"
+    t.string   "subdomain",  null: false
     t.integer  "plan_id"
-    t.hstore   "settings"
+    t.json     "settings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -69,8 +71,8 @@ ActiveRecord::Schema.define(version: 20151116221233) do
   add_index "tenants", ["plan_id"], name: "index_tenants_on_plan_id", using: :btree
 
   create_table "ticket_events", force: :cascade do |t|
-    t.integer  "ticket_id"
-    t.integer  "event_id"
+    t.uuid     "ticket_id"
+    t.uuid     "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -84,9 +86,9 @@ ActiveRecord::Schema.define(version: 20151116221233) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tickets", force: :cascade do |t|
+  create_table "tickets", id: :uuid, default: "uuid_generate_v1()", force: :cascade do |t|
     t.string   "title"
-    t.hstore   "ccs"
+    t.json     "ccs"
     t.integer  "ticket_type_id"
     t.integer  "priority"
     t.string   "status"
@@ -99,8 +101,8 @@ ActiveRecord::Schema.define(version: 20151116221233) do
   add_index "tickets", ["ticket_type_id"], name: "index_tickets_on_ticket_type_id", using: :btree
 
   create_table "user_tickets", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "ticket_id"
+    t.uuid     "user_id"
+    t.uuid     "ticket_id"
     t.string   "user_role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -109,12 +111,12 @@ ActiveRecord::Schema.define(version: 20151116221233) do
   add_index "user_tickets", ["ticket_id"], name: "index_user_tickets_on_ticket_id", using: :btree
   add_index "user_tickets", ["user_id"], name: "index_user_tickets_on_user_id", using: :btree
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: "uuid_generate_v1()", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "organization_id"
+    t.uuid     "organization_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -128,12 +130,9 @@ ActiveRecord::Schema.define(version: 20151116221233) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["organization_id"], name: "index_users_on_organization_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "tenants", "plans"
-  add_foreign_key "ticket_events", "events"
-  add_foreign_key "ticket_events", "tickets"
   add_foreign_key "tickets", "ticket_types"
-  add_foreign_key "user_tickets", "tickets"
-  add_foreign_key "user_tickets", "users"
 end
