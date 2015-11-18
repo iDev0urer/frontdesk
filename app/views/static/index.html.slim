@@ -1,9 +1,12 @@
 .jumbotron.jumbotron-fluid.index-jumbotron
   .container
-    .jumbotron-content
-      h1.display Fluid jumbotron
-      p.lead This is a modified jumbotron that occupies the entire horizontal space of it's parent.
-    .video-container
-      video.video-responsive(poster="http://placehold.it/2000x600" autoplay loop)
-        source src="https://s3-us-west-1.amazonaws.com/cwatsondev-test-sites/videos/A0405_H1505_H2_807_0064.webm" type="video/ogg"
-        source src="https://s3-us-west-1.amazonaws.com/cwatsondev-test-sites/videos/A0405_H1505_H2_807_0064.mp4" type="video/mp4"
+    .row
+      .jumbotron-content.col-xs-12
+        .centered
+          h1.display Starting a business is a journey
+          p.lead This is a modified jumbotron that occupies the entire horizontal space of it's parent.
+  .video-overlay
+  .video-container
+    video.video-responsive(poster="/images/video-bg-screenshot.png" autoplay loop)
+      source src="https://s3-us-west-1.amazonaws.com/cwatsondev-test-sites/videos/A0405_H1505_H2_807_0064.webm" type="video/ogg"
+      source src="https://s3-us-west-1.amazonaws.com/cwatsondev-test-sites/videos/A0405_H1505_H2_807_0064.mp4" type="video/mp4"

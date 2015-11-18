@@ -2,13 +2,17 @@ require 'components'
 require 'react_ujs'
 require 'jquery'      # You need both these files to access jQuery from Opal.
 require 'opal-jquery' # They must be in this order.
+require_tree './lib'
 
 Document.ready? do
-  video = Element.find('.video-responsive')
-  jumbotron_dimensions = {
-      height: Element.find('.index-jumbotron').css('height'),
-      width: Element.find('.index-jumbotron').css('width')
-  }
 
-  video.css 'height', jumbotron_dimensions[:height]
+  Document.on 'scroll' do
+    distance = Element.find('#topNav').offset.top
+    $window = `$(window)`
+    if $window.scroll_top >= distance
+      Element.find('#topNav').css 'position', 'fixed'
+    else
+      Element.find('#topNav').css 'position', 'absolute'
+    end
+  end
 end
