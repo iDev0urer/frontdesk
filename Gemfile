@@ -15,7 +15,6 @@ gem 'slim'
 gem 'slim-rails'
 gem 'passenger'
 
-gem 'bootstrap', '~> 4.0.0.alpha1'
 gem 'therubyracer', platforms: :ruby
 gem 'opal-jquery'
 gem 'reactive-ruby', '~> 0.7.28'
