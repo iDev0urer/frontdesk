@@ -15,4 +15,6 @@ Document.ready? do
       Element.find('#topNav').css 'position', 'absolute'
     end
   end
+
+  `$('.covervid-video').coverVid(2100, 1120);`
 end

@@ -6,7 +6,40 @@
           h1.display Starting a business is a journey
           p.lead This is a modified jumbotron that occupies the entire horizontal space of it's parent.
   .video-overlay
-  .video-container
-    video.video-responsive(poster="/images/video-bg-screenshot.png" autoplay loop)
+  .covervid-wrapper
+    video.covervid-video(poster="/images/video-bg-screenshot.png" autoplay loop)
       source src="https://s3-us-west-1.amazonaws.com/cwatsondev-test-sites/videos/A0405_H1505_H2_807_0064.webm" type="video/ogg"
       source src="https://s3-us-west-1.amazonaws.com/cwatsondev-test-sites/videos/A0405_H1505_H2_807_0064.mp4" type="video/mp4"
+
+#get-personal.p-t-lg
+  .container
+    .row
+      .col-xs-12.text-center
+        h1.section-title Get personal with your clients
+        h2.section-sub by communication in the same way they do
+  .img-display
+    img(src='/images/ipad-pro.png')
+
+#mailing-list.p-y-lg
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.section-title.m-b-md.text-center.text-white Join our mailing list
+        form.form-inline
+          .row
+            input.form-control.col-md-8(type='text' placeholder="Email address" )
+            button.btn.btn-success.col-md-3.col-md-offset-1(type="submit") Sign up
+
+#testimonials.p-y-lg
+  .container
+    .row
+      .col-md-8.col-md-offset-2.text-center
+        h1.section-title.m-b-lg What our customers have to say
+        .testimonial-slider
+          .testimonial
+            .profile-pic
+              img.img-circle(src='/images/profile-pic-sample.jpg')
+            .name John Doe
+            .content
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur felis lorem, tristique nec urna at, vehicula
+              | vulputate ipsum. Aliquam gravida efficitur consequat. Donec ut nisi sapien.

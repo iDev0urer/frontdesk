@@ -3,18 +3,16 @@ body {
 }
 .index-jumbotron {
   text-align: center;
+  height: 600px;
+  position: relative;
 
   .jumbotron-content {
     position: absolute;
-    @include media-breakpoint-up(md) {
-      height: 500px;
-    }
-    @include media-breakpoint-down(sm) {
-      height: 300px;
-    }
+    height: 600px;
     top: 0;
     left: 0;
     width: 100%;
+    padding: 0 10px;
 
     .centered {
       position: absolute;
@@ -22,45 +20,84 @@ body {
       left: 50%;
       transform: translateY(-50%) translateX(-50%);
       z-index: 2;
+      width: 100%;
 
     }
   }
 
   .video-overlay {
+    background-color: rgba(230,230,230,.7);
     position: absolute;
-    top: 0%;
-    left: 0%;
-    @include media-breakpoint-up(md) {
-      height: 500px;
-    }
-    @include media-breakpoint-down(sm) {
-      height: 300px;
-    }
-    width: 100%;
-    overflow: hidden;
     z-index: 1;
-    background: rgba(230, 230, 230, .7);
-  }
-  .video-container {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    @include media-breakpoint-up(md) {
-      height: 500px;
-    }
-    @include media-breakpoint-down(sm) {
-      height: 300px;
-    }
     width: 100%;
-    overflow: hidden;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .covervid-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+}
 
-    video {
-      width: 100%;
-      position: absolute;
-      z-index: 0;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
+#get-personal {
+
+  .img-display {
+
+    width: 100%;
+    @include media-breakpoint-up(md) {
+      width: 1100px;
+    }
+    margin: 5rem auto 0 auto;
+
+    img {
+      width: 800px;
+      margin: 0 auto;
+      @include media-breakpoint-only(xs) {
+        width: 600px;
+      }
+      @include media-breakpoint-up(md) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+#mailing-list {
+  background-color: $gray-light;
+}
+
+#testimonials {
+
+  .testimonial-slider {
+
+    .testimonial {
+
+      .profile-pic {
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .name {
+        margin-top: -15px;
+        background-color: #f7f7f7;
+        position: relative;
+        font-size: 1.1rem;
+      }
+
+      .content {
+
+      }
+    }
+
+    .navigator {
+
     }
   }
 }

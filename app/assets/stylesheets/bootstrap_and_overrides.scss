@@ -27,17 +27,18 @@
 //
 // Grayscale and brand colors for use across Bootstrap.
 
-// $gray-dark:                 #373a3c;
-// $gray:                      #55595c;
-// $gray-light:                #818a91;
-// $gray-lighter:              #eceeef;
-// $gray-lightest:             #f7f7f9;
+$gray-dark:                 #373a3c;
+$gray:                      #55595c;
+$gray-light:                #818a91;
+$gray-lighter:              #eceeef;
+$gray-lightest:             #f7f7f9;
 
-// $brand-primary:             #0275d8;
-// $brand-success:             #5cb85c;
-// $brand-info:                #5bc0de;
-// $brand-warning:             #f0ad4e;
-// $brand-danger:              #d9534f;
+$brand-primary:             #47a6bb;
+$brand-secondary:           #ec7a66;
+$brand-success:             #32b287;
+$brand-info:                #45a7b9;
+$brand-warning:             #c3c449;
+$brand-danger:              #c14f46;
 
 
 // Options
@@ -125,7 +126,8 @@
 //
 // Font, line-height, and color for body text, headings, and more.
 
-// $font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-header:          "Dosis", Trebuchet, sans-serif;
+$font-family-sans-serif:      "Panir", Helvetica, Arial, sans-serif;
 // $font-family-serif:          Georgia, "Times New Roman", Times, serif;
 // $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace;
 // $font-family-base:           $font-family-sans-serif;
@@ -158,7 +160,7 @@
 // $line-height:                1.5;
 
 // $headings-margin-bottom:     ($spacer / 2);
-// $headings-font-family:       inherit;
+$headings-font-family:       $font-family-header;
 // $headings-font-weight:       500;
 // $headings-line-height:       1.1;
 // $headings-color:             inherit;
