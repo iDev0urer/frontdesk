@@ -4,11 +4,11 @@ $(document).ready(function() {
 
     $window.scroll(function() {
         if ( $window.scrollTop() >= distance ) {
-            $('#topNav').addClass('navbar-fixed');
-            $('#topNav').removeClass('navbar-absolute');
+            $('.top-nav-index').addClass('navbar-fixed');
+            $('.top-nav-index').removeClass('navbar-absolute');
         } else {
-            $('#topNav').removeClass('navbar-fixed');
-            $('#topNav').addClass('navbar-absolute');
+            $('.top-nav-index').removeClass('navbar-fixed');
+            $('.top-nav-index').addClass('navbar-absolute');
         }
     });
 });

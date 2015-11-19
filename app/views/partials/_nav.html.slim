@@ -1,21 +1,15 @@
-#topNav.top-nav-index.clearfix.navbar-absolute
+#topNav class=(action_name == 'index' ? 'top-nav-index clearfix navbar-absolute' : 'clearfix navbar-static')
   .container
     .navbar-left
       .navbar-logo
-        a(href='#')
+        a(href='/')
           = image_tag 'sample-logo.png'
     .navbar-right
       nav.navbar-nav
         ul
-          li
-            a(href='#') Home
-          li
-            a(href='#') About
-          li
-            a(href='#') Pricing
-          li
-            a(href='#') Demo
-          li
-            a(href='#') Support
-          li
-            a(href='#') Blog
+          li: a(href='#') Home
+          li: a(href='#') About
+          li: a(href='#') Pricing
+          li: a(href='#') Demo
+          li: a(href='#') Support
+          li: a(href='#') Blog

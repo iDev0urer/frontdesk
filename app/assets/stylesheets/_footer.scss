@@ -1,0 +1,12 @@
+footer#main-footer {
+  background-color: $gray-dark;
+  color: $gray-lightest;
+
+  a {
+    color: $gray-lightest;
+
+    &:hover {
+      color: $brand-info;
+    }
+  }
+}
