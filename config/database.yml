@@ -22,6 +22,9 @@ default: &default
   pool: 5
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASS'] %>
+  database: <%= ENV['DB_USER'] %>
+  host: <%= ENV['DB_HOST] %>
+  port: <%= ENV['DB_PORT] %>
 
 development:
   <<: *default
@@ -82,6 +85,3 @@ test:
 #
 production:
   <<: *default
-  database: frontdesk_production
-  username: frontdesk
-  password: <%= ENV['FRONTDESK_DATABASE_PASSWORD'] %>
