@@ -91,13 +91,99 @@ body {
         font-size: 1.1rem;
       }
 
-      .content {
+      .title {
+        font-size: .9rem;
+        margin-top: -5px;
+      }
 
+      .content {
+        margin-top: .5rem;
       }
     }
 
     .navigator {
+      width: 300px;
+      margin: .5rem auto 0;
+      text-align: center;
 
+      a {
+        width: 10px;
+        height: 10px;
+        border: 2px solid $gray-dark;
+        border-radius: 50%;
+        background-color: $gray-lightest;
+        display: inline-block;
+        margin: 0 10px;
+
+        &.current {
+          background-color: $gray-dark;
+        }
+      }
+    }
+  }
+}
+
+@keyframes image-zoom-in {
+  from { background-size: 100% 100% }
+  to { background-size: 120% 120% }
+}
+
+#features {
+
+  .feature-wrapper {
+
+    figure.feature {
+      min-height: 300px;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &:hover {
+        animation: image-zoom-in 3s ease-out 1;
+        animation-fill-mode: forwards;
+      }
+
+      &:after {
+        content: ' ';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: transparentize($gray-dark, .3);
+        z-index: 0;
+      }
+
+      &-ui {
+        @include random-bg-color(180);
+        background-image: url('http://mmminimal.com/wp-content/uploads/2014/02/featured8.jpg');
+      }
+      &-apps {
+        @include random-bg-color(180);
+        background-image: url('http://www.hashslush.com/wp-content/uploads/2014/01/best-apps_hashslush.png');
+      }
+      &-integrations {
+        @include random-bg-color(180);
+        background-image: url("http://blog.backelite.com/wp-content/uploads/2015/10/integrations.png");
+      }
+      &-mobile {
+        @include random-bg-color(180);
+        background-image: url('http://trumpmediainc.com/wp-content/uploads/2015/05/mobile-friendly-website_blog.jpg');
+      }
+    }
+    
+    figcaption {
+      position: absolute;
+      color: $gray-lightest;
+      text-shadow: 1px 1px 2px $gray-dark;
+      font-size: 2rem;
+      text-align: center;
+      width: 100%;
+      z-index: 1;
+      left: 50%;
+      bottom: 10%;
+      transform: translateX(-50%);
     }
   }
 }

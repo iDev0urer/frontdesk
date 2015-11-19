@@ -1,0 +1,3 @@
+@mixin random-bg-color($end-color:255) {
+  background-color: rgb(random($end-color), random($end-color), random($end-color));
+}
