@@ -1,1 +1,1 @@
-web: ./passenger-status-service-agent & bundle exec passenger start -p $PORT
+web: bundle exec passenger start -p $PORT

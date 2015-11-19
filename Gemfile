@@ -23,6 +23,8 @@ gem 'reactive-ruby', '~> 0.7.28'
 gem 'react-rails', '~> 1.3.1'
 gem 'opal-rails', '~> 0.8.0'
 
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'guard'
