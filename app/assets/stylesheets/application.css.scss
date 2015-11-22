@@ -4,6 +4,5 @@
 @import 'helpers';
 @import 'elements';
 
-@import 'topNav';
-@import 'footer';
-@import 'index';
+@import "partials/*";
+@import 'pages/*';

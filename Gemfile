@@ -11,11 +11,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'sidekiq'
-gem 'devise'
 gem 'sinatra', require: false
 gem 'slim'
 gem 'slim-rails'
 gem 'passenger'
+gem 'cancancan'
 
 gem 'therubyracer', platforms: :ruby
 gem 'opal-jquery'

@@ -1,0 +1,17 @@
+#register {
+  background: $gray-dark url("/images/city-at-night.jpg") center no-repeat;
+  background-size: cover;
+
+  .registration-container {
+    border-radius: 10px;
+    background-color: transparentize($gray-lightest, .2);
+    padding: 2rem 1rem;
+
+    .registration-form {
+
+      label {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

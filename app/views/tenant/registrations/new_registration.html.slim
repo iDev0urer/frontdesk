@@ -1,2 +1,24 @@
-h1 Tenant#new_registration
-p Find me in app/views/tenant/new_registration.html.slim
+#register.p-y-xl
+  .container
+    .row
+      .registration-container.col-xs-12.col-md-8.col-md-offset-2.col-lg-6.col-lg-offset-3
+        h1.section-title.m-b-md.text-center Create an Account
+        form.registration-form.p-x-md(action="/register" method="post")
+          = hidden_field_tag :authenticity_token, form_authenticity_token
+          .form-group
+            label(for='fullName') Full name
+            input#fullName.form-control(name="full_name" placeholder="e.g. Shawn Spencer" )
+          .form-group
+            label(for='company') Company
+            input#company.form-control(name="company" placeholder="Psych" )
+          .form-group
+            label(for='email') Email
+            input#email.form-control(name="email" placeholder="itsthehair87@gmail.com" )
+          .form-group
+            label(for='password') Password
+            input#password.form-control(name="password" placeholder="••••••••••" )
+          label(for='subdomain') Subdomain
+          .form-group.input-group
+            input#subdomain.form-control(name="subdomain" placeholder="psychsb" )
+            .input-group-addon .frontdesk.io
+          button.btn.btn-lg.btn-block.btn-success(type="submit") Let's go!

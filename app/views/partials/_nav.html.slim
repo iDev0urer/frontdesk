@@ -1,9 +1,9 @@
-#topNav class=(action_name == 'index' ? 'top-nav-index clearfix navbar-absolute' : 'clearfix navbar-static')
+#topNav class=(@sticky_nav ? 'top-nav-index clearfix navbar-absolute' : 'clearfix navbar-static')
   .container
     .navbar-left
       .navbar-logo
         a(href='/')
-          = image_tag 'sample-logo.png'
+          = image_tag 'logo.png'
     .navbar-right
       nav.navbar-nav
         ul

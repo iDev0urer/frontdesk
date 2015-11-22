@@ -7,6 +7,9 @@ class CreateTickets < ActiveRecord::Migration
       t.integer :priority
       t.string :status
 
+      t.uuid :assignee_id, index: true, foreign_key: true
+      t.uuid :requester_id, index: true, foreign_key: true
+
       t.timestamps null: false
     end
   end
